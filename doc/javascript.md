@@ -1,0 +1,294 @@
+- javascript
+    - 概念
+        - ECMA-262 是 JavaScript 标准的官方名称
+        - 可被放置在HTML页面的\<body>和\<head>中，也可以外部引用
+    - 基础
+        - JavaScript 对大小写是敏感的
+        - JavaScript 会忽略多余的空格
+        - 在文本字符串中使用反斜杠对代码行进行换行
+        - 单行注释以 // 开头，也可以在行尾注释
+        - 多行注释以 /* 开始，以 */ 结尾
+    - 基础数据
+        - 变量
+            - var声明变量，变量必须以字母开头
+            - 使用var声明的是局部变量
+            - var name = "Gates", age=56, job="CEO";
+        - 数据类型
+            - 字符串、数字、布尔、数组、对象、null、undifined
+                - 数组 var cars = \["Audi","BMW","Volvo"];
+                - 对象 var person = {firstname:"Bill", lastname:"Gates", id:5566};
+                - 声明类型
+                    - var carname = new String();
+                    - var x = new Number();
+                    - var y = new Boolean();
+                    - var cars = new Array();
+                    - var person = new Object();
+                - 对象
+                    - 对象是数据(变量)，拥有属性和方法
+                    - 属性 objectName.propertyName
+                    - 方法 objectName.methodName()
+    - 语法
+        - 函数
+            - function myFunction(var1,var2) { code; }
+        - 运算符
+            - \+ - * / %
+            - ++ --
+            - = += -= *= /= %=
+            - \+ 用作字符串拼接
+        - 比较
+            - 比较运算符
+                - == === !=
+                - \> < >= <=
+            - 逻辑运算符
+                - && || !
+        - 流程控制语句
+            - 条件
+                - if (condition1) { code1; } else if (condition2) { code2; } else { code3; }
+                - switch(var) { case 1: code1; break; case2: code2; break; default: code3; }
+            - 循环
+                - for (var x=1; x.condition; x++) { code; }
+                - for (x in array) { code; }
+                - while (condition) { code; }
+                - do { code; } while (condition)
+                - break contionue
+                    - lable1: code1; lable2: code2; if (condition1) { continue lable1; } else if (condition2) { break lable2; } else { code3; }
+                - 对象循环
+                    ```javascript
+                    var person = {fname:"Bill", lname:"Gates", age:56};
+                    for (x in person) {
+                        txt=txt + person[x];
+                    }
+                    ```
+            - 异常与捕获
+                - try { code1; if ( condition1 ) { code1; } else if (condition2) { throw err1; } else { throw err2; }} catch(err) { coden; }
+    - 内建对象
+        - Bollean
+            - 属性
+                - constructor 返回对创建此对象的Boolean函数的引用
+                - prototype	使您有能力向对象添加属性和方法
+            - 方法
+                - toString() 把逻辑值转换为字符串，并返回结果
+                - toSource() 返回该对象的源代码
+                - valueOf() 返回Boolean对象的原始值
+        - Number
+            - 属性
+                - NaN 非数字值
+                - MAX_VALUE	可表示的最大的数
+                - MIN_VALUE	可表示的最小的数
+                - constructor 返回对创建此对象的Number函数的引用
+                - NEGATIVE_INFINITY	负无穷大，溢出时返回该值
+                - POSITIVE_INFINITY	正无穷大，溢出时返回该值
+                - prototype	使您有能力向对象添加属性和方法
+            - 方法
+                - toString 把数字转换为字符串，使用指定的基数
+                - toFixed 把数字转换为字符串，结果的小数点后有指定位数的数字
+                - toExponential	把对象的值转换为指数计数法
+                - toPrecision 把数字格式化为指定的长度
+                - toLocaleString 把数字转换为字符串，使用本地数字格式顺序
+                - valueOf 返回一个 Number 对象的基本数字值
+        - String
+            - 属性
+                - length 字符串的长度
+                - constructor 对创建该对象的函数的引用
+                - prototype 允许您向对象添加属性和方法
+            - 方法
+                - charAt() 返回在指定位置的字符
+                - charCodeAt() 返回在指定的位置的字符的Unicode编码
+                - concat() 连接字符串
+                - indexOf()	检索字符串
+                - match() 找到一个或多个正则表达式的匹配
+                - replace()	替换与正则表达式匹配的子串
+                - search() 检索与正则表达式相匹配的值
+                - slice() 提取字符串的片断，并在新的字符串中返回被提取的部分
+                - split() 把字符串分割为字符串数组
+                - substr() 从起始索引号提取字符串中指定数目的字符
+                - substring() 提取字符串中两个指定的索引号之间的字符
+                - toLocaleLowerCase() 把字符串转换为小写
+                - toLocaleUpperCase() 把字符串转换为大写
+                - toLowerCase()	把字符串转换为小写
+                - toUpperCase()	把字符串转换为大写
+                - anchor() 创建HTML锚
+                - big()	用大号字体显示字符串
+                - blink() 显示闪动字符串
+                - bold() 使用粗体显示字符串
+                - fixed() 以打字机文本显示字符串
+                - fontcolor() 使用指定的颜色来显示字符串
+                - fontsize()使用指定的尺寸来显示字符串
+                - fromCharCode() 从字符编码创建一个字符串
+                - italics()	使用斜体显示字符串
+                - lastIndexOf()	从后向前搜索字符串
+                - link() 将字符串显示为链接
+                - localeCompare() 用本地特定的顺序来比较两个字符串
+                - small() 使用小字号来显示字符串
+                - strike() 使用删除线来显示字符串
+                - sub()	把字符串显示为下标
+                - sup()	把字符串显示为上标
+                - toSource() 代表对象的源代码
+                - toString() 返回字符串
+                - valueOf()	返回某个字符串对象的原始值
+        - Date
+            - 属性
+                - constructor 返回对创建此对象的Date函数的引用
+                - prototype	使您有能力向对象添加属性和方法
+            - 方法
+                - Date() 返回当日的日期和时间
+                - toString() 把Date对象转换为字符串
+                - toTimeString() 把Date对象的时间部分转换为字符串
+                - toDateString() 把Date对象的日期部分转换为字符串
+                - toUTCString() 根据世界时，把Date对象转换为字符串
+                - toLocaleString() 根据本地时间格式，把Date对象转换为字符串
+                - toLocaleTimeString() 根据本地时间格式，把Date对象的时间部分转换为字符串
+                - toLocaleDateString() 根据本地时间格式，把Date对象的日期部分转换为字符串
+                - getDate()	从Date对象返回一个月中的某一天(1~31)
+                - getDay() 从Date对象返回一周中的某一天(0~6)
+                - getMonth() 从Date对象返回月份(0~1)
+                - getFullYear()	从Date对象以四位数字返回年份
+                - getYear()	请使用 getFullYear()方法代替
+                - getHours() 返回Date对象的小时(0~23)
+                - getMinutes() 返回Date对象的分钟(0~59)
+                - getSeconds() 返回Date对象的秒数(0~59)
+                - getMilliseconds()	返回Date对象的毫秒(0~999)
+                - getTime()	返回1970年1月1日至今的毫秒数
+                - getTimezoneOffset() 返回本地时间与格林威治标准时间(GMT) 的分钟差
+                - UTC()	根据世界时返回1970年1月1日到指定日期的毫秒数
+                - getUTCDate() 根据世界时从Date对象返回月中的一天(1~31)
+                - getUTCDay() 根据世界时从Date对象返回周中的一天(0~6)
+                - getUTCMonth()	根据世界时从Date对象返回月份(0~11)
+                - getUTCFullYear() 根据世界时从Date对象返回四位数的年份
+                - getUTCHours()	根据世界时返回Date对象的小时(0~23)
+                - getUTCMinutes() 根据世界时返回Date对象的分钟(0~59)
+                - getUTCSeconds() 根据世界时返回Date对象的秒钟(0~59)
+                - getUTCMilliseconds() 根据世界时返回Date对象的毫秒(0~999)
+                - parse() 返回1970年1月1日午夜到指定日期(字符串)的毫秒数
+                - setDate()	设置Date对象中月的某一天(1~31)
+                - setMonth() 设置Date对象中月份(0~11)
+                - setFullYear()	设置Date对象中的年份四位数字)
+                - setYear()	请使用 setFullYear()方法代替
+                - setHours() 设置Date对象中的小时(0~23)
+                - setMinutes() 设置Date对象中的分钟(0~59)
+                - setSeconds() 设置Date对象中的秒钟(0~59)
+                - setMilliseconds()	设置Date对象中的毫秒(0~999)
+                - setTime()	以毫秒设置Date对象
+                - setUTCDate() 根据世界时设置Date对象中月份的一天(1~31)
+                - setUTCMonth() 根据世界时设置Date对象中的月份(0~11)
+                - setUTCFullYear() 根据世界时设置Date对象中的年份(四位数字)
+                - setUTCHours() 根据世界时设置Date对象中的小时(0~23)
+                - setUTCMinutes() 根据世界时设置Date对象中的分钟(0~59)
+                - setUTCSeconds() 根据世界时设置Date对象中的秒钟(0~59)
+                - setUTCMilliseconds() 根据世界时设置Date对象中的毫秒(0~999)
+                - toSource() 返回该对象的源代码
+                - valueOf()	返回 Date对象的原始值
+        - Array
+            - 属性
+                - length 设置或返回数组中元素的数目
+                - constructor 返回对创建此对象的数组函数的引用
+                - prototype	使您有能力向对象添加属性和方法
+            - 方法
+                - concat() 连接两个或更多的数组，并返回结果
+                - join() 把数组的所有元素放入一个字符串，元素通过指定的分隔符进行分隔
+                - pop()	删除并返回数组的最后一个元素
+                - push() 向数组的末尾添加一个或更多元素，并返回新的长度
+                - shift() 删除并返回数组的第一个元素
+                - unshift()	向数组的开头添加一个或更多元素，并返回新的长度
+                - reverse() 颠倒数组中元素的顺序
+                - splice() 删除元素，并向数组添加新元素
+                - slice() 从某个已有的数组返回选定的元素
+                - sort() 对数组的元素进行排序
+                - toString() 把数组转换为字符串，并返回结果
+                - toLocaleString() 把数组转换为本地数组，并返回结果
+                - toSource() 返回该对象的源代码
+                - valueOf()	返回数组对象的原始值
+        - Math
+            - 属性
+                - E	返回算术常量e，即自然对数的底数(约等于2.718)
+                - LN2 返回2的自然对数(约等于0.693)
+                - LN10 返回10的自然对数(约等于2.302)
+                - LOG2E	返回以2为底的e的对数(约等于 1.414)
+                - LOG10E 返回以10为底的e的对数(约等于0.434)
+                - PI 返回圆周率(约等于3.14159)
+                - SQRT1_2 返回返回2的平方根的倒数(约等于0.707)
+                - SQRT2	返回2的平方根(约等于1.414)
+            - 方法
+                - random() 返回0~1之间的随机数
+                - floor(x) 对数进行下舍入
+                - ceil(x) 对数进行上舍入
+                - round(x) 把数四舍五入为最接近的整数
+                - abs(x) 返回数的绝对值
+                - acos(x) 返回数的反余弦值
+                - asin(x) 返回数的反正弦值
+                - atan(x) 以介于-PI/2与PI/2弧度之间的数值来返回 x 的反正切值
+                - atan2(y,x) 返回从x轴到点(x,y)的角度(介于-PI/2与 PI/2弧度之间)
+                - cos(x) 返回数的余弦
+                - exp(x) 返回e的指数
+                - log(x) 返回数的自然对数(底为e)
+                - max(x,y) 返回x和y中的最高值
+                - min(x,y) 返回x和y中的最低值
+                - pow(x,y) 返回x的y次幂
+                - sin(x) 返回数的正弦
+                - sqrt(x) 返回数的平方根
+                - tan(x) 返回角的正切
+                - toSource() 返回该对象的源代码
+                - valueOf()	返回 Math 对象的原始值
+        - RegExp
+            - 对象属性
+                - global RegExp对象是否具有标志g
+                - ignoreCase RegExp对象是否具有标志i
+                - lastIndex	一个整数，标示开始下一次匹配的字符位置
+                - multiline	RegExp对象是否具有标志m
+                - source 正则表达式的源文本
+            - 对象方法
+                - compile 编译正则表达式
+                - exec 检索字符串中指定的值返回找到的值，并确定其位置
+                - test 检索字符串中指定的值返回 true 或 false
+            - 支持正则的String对象方法
+                - search 检索与正则表达式相匹配的值
+                - match	找到一个或多个正则表达式的匹配
+                - replace 替换与正则表达式匹配的子串
+                - split	把字符串分割为字符串数组
+            - 修饰符
+                - i	执行对大小写不敏感的匹配
+                - g	执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）
+                - m	执行多行匹配
+            - 方括号
+                - \[abc] 查找方括号之间的任何字符
+                - \[^abc] 查找任何不在方括号之间的字符
+                - \[0-9] 查找任何从0至9的数字
+                - \[a-z] 查找任何从小写a到小写z的字符
+                - \[A-Z] 查找任何从大写A到大写Z的字符
+                - \[A-z] 查找任何从大写A到小写z的字符
+                - \[adgk] 查找给定集合内的任何字符
+                - \[^adgk] 查找给定集合外的任何字符
+                - (red|blue|green) 查找任何指定的选项
+            - 元字符
+                - \. 查找单个字符，除了换行和行结束符
+                - \w 查找单词字符
+                - \W 查找非单词字符
+                - \d 查找数字
+                - \D 查找非数字字符
+                - \s 查找空白字符
+                - \S 查找非空白字符
+                - \b 匹配单词边界
+                - \B 匹配非单词边界
+                - \0 查找NUL字符
+                - \n 查找换行符
+                - \f 查找换页符
+                - \r 查找回车符
+                - \t 查找制表符
+                - \v 查找垂直制表符
+                - \xxx 查找以八进制数xxx规定的字符
+                - \xdd 查找以十六进制数dd规定的字符
+                - \uxxxx 查找以十六进制数xxxx规定的Unicode字符
+            - 量词
+                - n+ 匹配任何包含至少一个n的字符串
+                - n* 匹配任何包含零个或多个n的字符串
+                - n? 匹配任何包含零个或一个n的字符串
+                - n{X} 匹配包含X个n的序列的字符串
+                - n{X,Y} 匹配包含X至Y个n的序列的字符串
+                - n{X,} 匹配包含至少X个n的序列的字符串
+                - n$ 匹配任何结尾为n的字符串
+                - ^n 匹配任何开头为n的字符串
+                - ?=n 匹配任何其后紧接指定字符串n的字符串
+                - ?!n 匹配任何其后没有紧接指定字符串n的字符串
+    - js window
+        - 全局对象、函数、变量会自动成为window对象的成员
+        - 详参 https://github.com/elephanyu/myfrontend/blob/master/doc/dom.md

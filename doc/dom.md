@@ -72,15 +72,15 @@
 ---
 - dom实例
     - window对象
-        - 显示对话框, 带有折行
+        - 显示对话框, 带有折行 alert("文本")
             - window.alert("message" + "\n" + "message2")
-        - 显示确认框
+        - 显示确认框 prompt("文本","默认值")
             ```html
             <body>
                  <input type="button" onclick="disp_alert()" value="显示消息框" />
                  <script type="text/javascript">
                      function show_confirm() {
-                         var r = confirm("Press a button!");
+                         var r = window.confirm("Press a button!");
                          if ( r == true) {
                              alert("You pressed OK!");
                          }
@@ -91,10 +91,10 @@
                  </script>
             </body>
             ```
-        - 显示提示框，同上
+        - 显示提示框，同上 prompt("文本","默认值")
             ```javascript
              function disp_prompt() {
-                 var name = prompt("请输入您的名字","Bill Gates");
+                 var name = window.prompt("请输入您的名字","Bill Gates");
                  if (name != null && name != "") {
                      document.write("你好，" + name + "！今天过得好吗？")
                  }
@@ -102,6 +102,7 @@
             ```
         - 通过点击按钮来打开一个窗口, 并控制其外观 
             - window.open("http://www.w3school.com.cn","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=400, height=400")
+            - window.close()
         - 把用户带到一个新的地址 
             - window.location = "/index.html"
         - 重新加载文档 
@@ -127,7 +128,7 @@
             - window.scrollBy(100,100);
         - 把窗口滚动到指定的位置
             - window.scrollTo(100,500)
-        - 简单的计时
+        - 简单的计时 setTimeout() clearTimeout()
             ```html
             <body>
                  <input type="button" value="显示计时的消息框！" onClick = "timedMsg()">
@@ -184,6 +185,7 @@
             </body>
             ```
     - document对象
+        - document.cookie
         - 使用 document.write() 向输出流写内容
             - document.write("Hello World!")
             - document.write("\<h1>Hello World!\</h1>")
@@ -211,6 +213,16 @@
             - document.forms.length
         - 计算文档中的图像数目
             - document.images.length
+    - location对象
+        - location.href 当前页面的 URL
+        - location.assign() 加载新的文档
+        - location.hostname 返回 web 主机的域名
+        - location.pathname 返回当前页面的路径和文件名
+        - location.port 返回 web主机的端口(80或443)
+        - location.protocol 返回所使用的web协议(http://或https://)
+    - history对象
+        - history.back() 与在浏览器点击后退按钮相同
+        - history.forward() 与在浏览器中点击按钮向前相同
     - screen对象
         - screen.width screen.height
         - screen.availWidth screen.availHeight
@@ -340,7 +352,6 @@
                           txt = txt + option;
                           document.getElementById("result").value = txt;
                       }
-                      <
                  </script>
             </body>
             ```
